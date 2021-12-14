@@ -16,7 +16,7 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
       <ol className="unstyled">
         {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+          // const title = post.frontmatter.title || post.fields.slug
 
           return (
             <li key={post.fields.slug}>
@@ -25,22 +25,22 @@ const BlogIndex = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <header>
+                {/* <header>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
                   <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
+                </header> */}
+                {/* <section>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
                     itemProp="description"
                   />
-                </section>
+                </section> */}
               </article>
             </li>
           )
@@ -64,11 +64,6 @@ export const pageQuery = graphql`
         excerpt
         fields {
           slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
         }
       }
     }
