@@ -41,7 +41,7 @@ const Bio = () => {
           width={200}
           height={200}
           quality={95}
-          alt={author}
+          alt={author.name}
         />
         <h2 className="font-bold text-2xl">Hi, I'm Dogan</h2>
         <p>I'm a Software Developer who likes to create good looking websites. <br/> I have been actively working on software projects for 2+ years.</p>

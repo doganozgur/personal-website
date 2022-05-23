@@ -3,6 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import { FaGithub, FaRegEye } from 'react-icons/fa';
 import { graphql } from "gatsby"
+import Seo from "../../components/seo"
 
 
 const index = ({ data }) => {
@@ -10,10 +11,13 @@ const index = ({ data }) => {
 
     return (
         <Layout>
+            <Seo title="Projects" />
             <ul className="grid sm:grid-cols-2 grid-cols-1 gap-8">
                 {projects.map(project => (
                     <li key={project.id}>
-                        <GatsbyImage image={getImage(project.frontmatter.cover)} alt="Project" />
+                        <a href={project.frontmatter.live} target="_blank" rel="noreferrer">
+                            <GatsbyImage image={getImage(project.frontmatter.cover)} alt="Project" />
+                        </a>
                         <h3 className="mt-3 text-sm">{project.frontmatter.title}</h3>
                         <div className="flex items-center space-x-2 my-2">
                             {project.frontmatter.techs.map(tech => (
