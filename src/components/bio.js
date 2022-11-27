@@ -44,18 +44,14 @@ const Bio = () => {
           alt={author.name}
         />
         <h2 className="font-bold text-2xl">Hi, I'm Dogan</h2>
-        <p>I'm a Software Developer who likes to create good looking websites. <br/> I have been actively working on software projects for 2+ years.</p>
-        <p>Technologies I'm currently using are: Javascript, React.js, Node.js</p>
+        <p>I'm a frontend developer who likes to create good looking web applications. <br/> I have been actively working on software projects for 3+ years.</p>
+        <p>Technologies I'm currently using are: Javascript, React.js, Next.js, GraphQL.</p>
         <p className="pt-5">Follow me online here:</p>
         <ul className="pt-4 pl-6 list-disc">
             <li><a className="text-blue-700" href={ `https://www.github.com/${social.github}` } target="_blank" rel="noreferrer"><u>GitHub</u></a></li>
             <li><a className="text-blue-700" href={ `https://www.linkedin.com/in/${social.linkedin}` } target="_blank" rel="noreferrer"><u>LinkedIn</u></a></li>
         </ul>
     </div>
-
-    // <div className="bio">
-    //   
-    // </div>
   )
 }
 

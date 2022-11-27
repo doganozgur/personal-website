@@ -20,8 +20,8 @@ const index = ({ data }) => {
                         </a>
                         <h3 className="mt-3 text-sm">{project.frontmatter.title}</h3>
                         <div className="flex items-center space-x-2 my-2">
-                            {project.frontmatter.techs.map(tech => (
-                                <span className="pill">{tech}</span>
+                            {project.frontmatter.techs.map((tech, idx) => (
+                                <span className="pill" key={idx}>{tech}</span>
                             ))}
                         </div>
                         <div className="flex justify-between">
