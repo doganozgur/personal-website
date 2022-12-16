@@ -45,7 +45,7 @@ const Bio = () => {
         />
         <h2 className="font-bold text-2xl">Hi, I'm Dogan</h2>
         <p>I'm a frontend developer who likes to create good looking web applications. <br/> I have been actively working on software projects for 3+ years.</p>
-        <p>Technologies I'm currently using are: Javascript, React.js, Next.js, GraphQL.</p>
+        <p>Technologies I'm currently using are: JavaScript, React.js, Next.js, GraphQL.</p>
         <p className="pt-5">Follow me online here:</p>
         <ul className="pt-4 pl-6 list-disc">
             <li><a className="text-blue-700" href={ `https://www.github.com/${social.github}` } target="_blank" rel="noreferrer"><u>GitHub</u></a></li>
