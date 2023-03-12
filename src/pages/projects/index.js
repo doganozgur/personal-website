@@ -1,9 +1,8 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
-import { FaGithub, FaRegEye } from "react-icons/fa"
 import { graphql } from "gatsby"
 import Seo from "../../components/seo"
+import Project from "../../components/Project"
 
 const index = ({ data }) => {
   const projects = data.allMarkdownRemark.nodes
@@ -11,45 +10,11 @@ const index = ({ data }) => {
   return (
     <Layout>
       <Seo title="Projects" />
-      <ul className="grid sm:grid-cols-2 grid-cols-1 gap-8">
+      <section className="grid sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-12">
         {projects.map(project => (
-          <li key={project.id}>
-            <a href={project.frontmatter.live} target="_blank" rel="noreferrer">
-              <GatsbyImage
-                image={getImage(project.frontmatter.cover)}
-                alt="Project"
-              />
-            </a>
-            <h3 className="mt-3 text-sm">{project.frontmatter.title}</h3>
-            <div className="flex items-center space-x-2 my-2">
-              {project.frontmatter.techs.map((tech, idx) => (
-                <span className="pill" key={idx}>
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div className="flex justify-between">
-              <a
-                href={project.frontmatter.source}
-                target="_blank"
-                rel="noreferrer"
-                title="View on GitHub"
-                className="flex items-center text-sm"
-              >
-                <FaGithub className="mr-1" /> Source
-              </a>
-              <a
-                href={project.frontmatter.live}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center text-sm"
-              >
-                <FaRegEye className="mr-1" /> View Live
-              </a>
-            </div>
-          </li>
+          <Project key={project.id} data={project.frontmatter} />
         ))}
-      </ul>
+      </section>
     </Layout>
   )
 }
@@ -68,11 +33,7 @@ export const ProjectQuery = graphql`
           live
           cover {
             childImageSharp {
-              gatsbyImageData(
-                height: 160
-                width: 300
-                transformOptions: { fit: COVER }
-              )
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }

@@ -5,7 +5,7 @@ cover: "./01.jpg"
 techs:
   - React.js
   - Redux
-  - TailwindCSS
+  - Tailwind
 source: "https://github.com/doganozgur/amazon-clone-react"
 live: "https://react-amazon-clon.netlify.app/"
 ---

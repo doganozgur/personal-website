@@ -6,12 +6,24 @@
 
 @layer utilities {
   .pill {
-      background-color: rgba(6, 95, 70, 1);
-      color: #fff;
-      padding: 0.125rem 0.625rem;
-      border-radius: 100vh;
-      font-size: 0.7rem;
-      display: inline-flex;
-      align-items: center;
+    background-color: rgba(6, 95, 70, 1);
+    color: #fff;
+    padding: 0.125rem 0.625rem;
+    border-radius: 100vh;
+    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.cover-image {
+  object-fit: cover;
+}
+
+@media screen and (min-width: 640px) {
+  .cover-image {
+    height: 160px;
+    width: 300px;
+    width: 100%;
   }
 }
