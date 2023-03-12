@@ -2,11 +2,11 @@ import React, { useEffect } from "react"
 import { FaSun } from "react-icons/fa"
 
 export default function ThemeSwitcher() {
-  const localStorageTheme = localStorage.getItem("theme")
-
   useEffect(() => {
     if (typeof document !== "undefined") {
+      const localStorageTheme = localStorage.getItem("theme")
       const htmlTag = document.querySelector("html")
+
       if (localStorageTheme) {
         htmlTag.classList.add(localStorageTheme)
       }
@@ -15,6 +15,7 @@ export default function ThemeSwitcher() {
 
   function toggleTheme() {
     if (typeof document !== "undefined") {
+      const localStorageTheme = localStorage.getItem("theme")
       const htmlTag = document.querySelector("html")
       htmlTag.classList.toggle("dark")
 
