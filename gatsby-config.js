@@ -4,11 +4,11 @@ module.exports = {
     description: `Doğan Özgür personal website`,
     siteUrl: `https://doganozgur.me`,
     author: {
-      name: "Doğan Özgür"
+      name: "Doğan Özgür",
     },
     social: {
       linkedin: `dozgur`,
-      github: `doganozgur`
+      github: `doganozgur`,
     },
   },
   plugins: [

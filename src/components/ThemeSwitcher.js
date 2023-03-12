@@ -2,22 +2,27 @@ import React, { useEffect } from "react"
 import { FaSun } from "react-icons/fa"
 
 export default function ThemeSwitcher() {
-  const htmlTag = document.querySelector("html")
   const localStorageTheme = localStorage.getItem("theme")
 
   useEffect(() => {
-    if (localStorageTheme) {
-      htmlTag.classList.add(localStorageTheme)
+    if (typeof document !== "undefined") {
+      const htmlTag = document.querySelector("html")
+      if (localStorageTheme) {
+        htmlTag.classList.add(localStorageTheme)
+      }
     }
   }, [])
 
   function toggleTheme() {
-    htmlTag.classList.toggle("dark")
+    if (typeof document !== "undefined") {
+      const htmlTag = document.querySelector("html")
+      htmlTag.classList.toggle("dark")
 
-    if (localStorageTheme) {
-      localStorage.removeItem("theme")
-    } else {
-      localStorage.setItem("theme", htmlTag.classList.value)
+      if (localStorageTheme) {
+        localStorage.removeItem("theme")
+      } else {
+        localStorage.setItem("theme", htmlTag.classList.value)
+      }
     }
   }
 
