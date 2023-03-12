@@ -24,7 +24,7 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 dark:text-white">
       <StaticImage
         className="rounded-full"
         layout="fixed"
