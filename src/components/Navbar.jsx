@@ -1,10 +1,15 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import ThemeSwitcher from "./ThemeSwitcher"
 import { globalHistory } from "@reach/router"
 
 function Navbar() {
-  const path = globalHistory.location.pathname
+  const [path, setPath] = useState(globalHistory.location.pathname)
+
+  useEffect(() => {
+    setPath(globalHistory.location.pathname)
+  }, [globalHistory.location.pathname])
+
   // Classes
   const linkClassNames =
     "border-b-2 border-transparent hover:border-black border-dashed dark:hover:border-white active:border-black"
