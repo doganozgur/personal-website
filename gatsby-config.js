@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Doğan Özgür Blog`,
+    title: `Doğan Özgür`,
     description: `Doğan Özgür personal website`,
     siteUrl: `https://doganozgur.me`,
     author: {
@@ -128,5 +128,29 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Inconsolata`,
+            file: `https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap`,
+          },
+          {
+            name: `Roboto`,
+            file: `https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap`,
+          },
+          {
+            name: `Roboto Mono`,
+            file: `https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap`,
+          },
+        ],
+      },
+    },
   ],
 }
