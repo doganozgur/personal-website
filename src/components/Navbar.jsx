@@ -10,23 +10,26 @@ function Navbar() {
     setPath(globalHistory.location.pathname)
   }, [globalHistory.location.pathname])
 
-  // Classes
+  // Default classes
   const linkClassNames =
     "border-b-2 border-transparent hover:border-black border-dashed dark:hover:border-white active:border-black"
-  const linkHomeClassname =
-    path === "/" ? "border-black dark:border-white" : " "
-  const linkProjectsClassname =
-    path === "/projects" ? "border-black dark:border-white" : " "
 
   return (
     <nav className="flex items-center justify-between py-6 mb-16">
       <ThemeSwitcher />
       <div className="space-x-6 text-right">
-        <Link className={`${linkClassNames} ${linkHomeClassname}`} to="/">
+        <Link
+          className={`${linkClassNames} ${
+            path === "/" ? "border-black dark:border-white" : " "
+          }`}
+          to="/"
+        >
           Home
         </Link>
         <Link
-          className={`${linkClassNames} ${linkProjectsClassname}`}
+          className={`${linkClassNames} ${
+            path === "/projects" ? "border-black dark:border-white" : " "
+          }`}
           to="/projects"
         >
           Projects
