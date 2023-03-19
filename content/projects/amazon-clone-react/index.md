@@ -1,6 +1,6 @@
 ---
 templateKey: project
-title: Amazon Clone React
+title: Amazon Clone
 cover: "./01.jpg"
 techs:
   - React.js
