@@ -15,7 +15,7 @@ const Project = ({ data }) => {
         />
       </a>
       <h3 className="mt-3 text-sm">{title}</h3>
-      <div className="flex items-center space-x-2 mt-2 mb-3">
+      <div className="flex flex-wrap items-center gap-2 mt-2 mb-3">
         {techs.map((tech, idx) => (
           <span className="pill" key={idx}>
             {tech}
